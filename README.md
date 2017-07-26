@@ -1,7 +1,7 @@
 About mocsy
 ===========
 
-Home: https://github.com/jamesorr/mocsy.git
+Home: https://github.com/jamesorr/mocsy
 
 Package license: MIT
 
