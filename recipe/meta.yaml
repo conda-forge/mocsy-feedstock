@@ -1,13 +1,12 @@
-{% set version = "2.3.2" %}
+{% set version = "2.3.3" %}
 
 package:
   name: mocsy
   version: {{ version }}
 
 source:
-  fn: mocsy-{{ version }}.tar.gz
   url: https://github.com/jamesorr/mocsy/archive/v{{ version }}.tar.gz
-  sha256: acc8793071d36df62efdd2cd1beed7f76f69505eee1201d12d147a1a18a2b46d
+  sha256: e6a1b833deb3fee17f3906e8bae3c94c5d9585a918f4cdaf46eb67c1679f0fe0
 
 build:
   number: 0
@@ -17,20 +16,29 @@ requirements:
   build:
     - python
     - setuptools
-    - numpy x.x
+    - numpy 1.7.*  # [py27]
+    - numpy 1.9.*  # [py35]
+    - numpy 1.11.*  # [py36]
     - gcc  # [not win]
   run:
     - python
-    - numpy x.x
+    - numpy >=1.7  # [py27]
+    - numpy >=1.9  # [py35]
+    - numpy >=1.11  # [py36]
     - libgcc  # [linux]
+    - libgfortran  # [osx]
 
 test:
   imports:
     - mocsy
+  commands:
+    - conda inspect linkages -p $PREFIX mocsy  # [not win]
+    - conda inspect objects -p $PREFIX mocsy  # [osx]
 
 about:
-  home: https://github.com/jamesorr/mocsy.git
+  home: https://github.com/jamesorr/mocsy
   license: MIT
+  license_file: LICENSE
   summary: 'Routines to model ocean carbonate system thermodynamics.'
 
 extra:
