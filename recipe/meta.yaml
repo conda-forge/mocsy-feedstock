@@ -16,15 +16,12 @@ requirements:
   build:
     - python
     - setuptools
-    - numpy 1.7.*  # [py27]
-    - numpy 1.9.*  # [py35]
-    - numpy 1.11.*  # [py36]
+    - automake  # [not win]
+    - numpy 1.11.*
     - gcc  # [not win]
   run:
     - python
-    - numpy >=1.7  # [py27]
-    - numpy >=1.9  # [py35]
-    - numpy >=1.11  # [py36]
+    - numpy >=1.11
     - libgcc  # [linux]
     - libgfortran  # [osx]
 
@@ -32,8 +29,8 @@ test:
   imports:
     - mocsy
   commands:
-    - conda inspect linkages -p $PREFIX mocsy  # [not win]
-    - conda inspect objects -p $PREFIX mocsy  # [osx]
+    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
+    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
 about:
   home: https://github.com/jamesorr/mocsy
