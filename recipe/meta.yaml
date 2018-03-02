@@ -17,11 +17,15 @@ requirements:
     - python
     - setuptools
     - automake  # [not win]
-    - numpy 1.11.*
+    - numpy >=1.7  # [py27]
+    - numpy >=1.9  # [py35]
+    - numpy >=1.11  # [py36]
     - gcc  # [not win]
   run:
     - python
-    - numpy >=1.11
+    - numpy >=1.7  # [py27]
+    - numpy >=1.9  # [py35]
+    - numpy >=1.11  # [py36]
     - libgcc  # [linux]
     - libgfortran  # [osx]
 
