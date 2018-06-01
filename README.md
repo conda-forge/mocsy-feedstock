@@ -14,14 +14,16 @@ Summary: Routines to model ocean carbonate system thermodynamics.
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/mocsy-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/mocsy-feedstock)
-OSX: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
-Windows: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/mocsy-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/mocsy-feedstock)
+![OSX disabled](https://img.shields.io/badge/OSX-disabled-lightgrey.svg)
+![Windows disabled](https://img.shields.io/badge/Windows-disabled-lightgrey.svg)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/mocsy/badges/version.svg)](https://anaconda.org/conda-forge/mocsy)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/mocsy/badges/downloads.svg)](https://anaconda.org/conda-forge/mocsy)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-mocsy-green.svg)](https://anaconda.org/conda-forge/mocsy) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/mocsy.svg)](https://anaconda.org/conda-forge/mocsy) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/mocsy.svg)](https://anaconda.org/conda-forge/mocsy) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/mocsy.svg)](https://anaconda.org/conda-forge/mocsy) |
 
 Installing mocsy
 ================
@@ -66,6 +68,7 @@ To manage the continuous integration and simplify feedstock maintenance
 Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
 this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
 
+For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
 
 Terminology
 ===========
