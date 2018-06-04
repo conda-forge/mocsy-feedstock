@@ -1,4 +1,4 @@
-{% set version = "2.3.3" %}
+{% set version = "2.3.8" %}
 
 package:
   name: mocsy
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/jamesorr/mocsy/archive/v{{ version }}.tar.gz
-  sha256: e6a1b833deb3fee17f3906e8bae3c94c5d9585a918f4cdaf46eb67c1679f0fe0
+  sha256: b5be910355ab7e8ca72bae486dae47d879814470421938c6242a73befc0b6549
 
 build:
   number: 0
@@ -15,16 +15,12 @@ build:
 requirements:
   build:
     - python
-    - setuptools
-    - numpy 1.7.*  # [py27]
-    - numpy 1.9.*  # [py35]
-    - numpy 1.11.*  # [py36]
+    - numpy 1.11.*
+    - automake  # [not win]
     - gcc  # [not win]
   run:
     - python
-    - numpy >=1.7  # [py27]
-    - numpy >=1.9  # [py35]
-    - numpy >=1.11  # [py36]
+    - numpy >=1.11
     - libgcc  # [linux]
     - libgfortran  # [osx]
 
@@ -32,8 +28,8 @@ test:
   imports:
     - mocsy
   commands:
-    - conda inspect linkages -p $PREFIX mocsy  # [not win]
-    - conda inspect objects -p $PREFIX mocsy  # [osx]
+    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
+    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
 about:
   home: https://github.com/jamesorr/mocsy
