@@ -1,4 +1,4 @@
-{% set version = "2.3.8" %}
+{% set version = "2.3.9" %}
 
 package:
   name: mocsy
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/jamesorr/mocsy/archive/v{{ version }}.tar.gz
-  sha256: b5be910355ab7e8ca72bae486dae47d879814470421938c6242a73befc0b6549
+  sha256: e9ad81dc7ef1e1550e2e4263d958db6a0fba108457f34785b186ccb994c48809
 
 build:
   number: 0
