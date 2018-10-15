@@ -7,35 +7,34 @@ package:
 source:
   url: https://github.com/jamesorr/mocsy/archive/v{{ version }}.tar.gz
   sha256: e9ad81dc7ef1e1550e2e4263d958db6a0fba108457f34785b186ccb994c48809
+  patches:
+    - find_fortran.patch
 
 build:
-  number: 0
+  number: 1000
   skip: True  # [win or osx or py2k]
 
 requirements:
   build:
-    - python
-    - numpy 1.11.*
     - automake  # [not win]
-    - gcc  # [not win]
+    - {{ compiler('fortran') }}
+    - {{ compiler('c') }}
+  host:
+    - python
+    - numpy
   run:
     - python
-    - numpy >=1.11
-    - libgcc  # [linux]
-    - libgfortran  # [osx]
+    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
     - mocsy
-  commands:
-    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
-    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
 about:
   home: https://github.com/jamesorr/mocsy
   license: MIT
   license_file: LICENSE
-  summary: 'Routines to model ocean carbonate system thermodynamics.'
+  summary: 'Routines to model ocean carbonate system thermodynamics'
 
 extra:
   recipe-maintainers:

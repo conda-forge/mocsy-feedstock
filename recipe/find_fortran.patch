@@ -1,0 +1,18 @@
+--- mocsy-2.3.9.orig/Makefile	2018-06-07 05:57:29.000000000 -0300
++++ mocsy-2.3.9/Makefile	2018-10-15 17:25:58.528868563 -0300
+@@ -73,12 +73,12 @@
+ #FC = xlf
+ #FC = f95
+ #F90 = f95
+-FC = gfortran -ffree-line-length-none
+-F90 = gfortran -ffree-line-length-none
++# FC = ${FC} -ffree-line-length-none
++# F90 = ${FC} -ffree-line-length-none
+ #FC = ifort
+ #F90 = ifort
+ 
+-FCFLAGS = -fPIC -cpp -DUSE_PRECISION=$(PRECISION)
++FCFLAGS = -fPIC -cpp -DUSE_PRECISION=$(PRECISION) -ffree-line-length-none
+ #DEBUGFLAGS = -g
+ LDFLAGS = -L./ -lmocsy
+ INCLUDEFLAGS = -Isrc
