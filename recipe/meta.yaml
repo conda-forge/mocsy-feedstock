@@ -14,22 +14,19 @@ build:
 
 requirements:
   build:
-    - python
-    - numpy 1.11.*
     - automake  # [not win]
-    - gcc  # [not win]
+    - {{ compiler('fortran') }}
+    - {{ compiler('c') }}
+  host:
+    - python
+    - numpy
   run:
     - python
-    - numpy >=1.11
-    - libgcc  # [linux]
-    - libgfortran  # [osx]
+    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
     - mocsy
-  commands:
-    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
-    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
 about:
   home: https://github.com/jamesorr/mocsy
