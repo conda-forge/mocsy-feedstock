@@ -1,4 +1,4 @@
-{% set version = "2.3.9" %}
+{% set version = "2.4.0" %}
 
 package:
   name: mocsy
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/jamesorr/mocsy/archive/v{{ version }}.tar.gz
-  sha256: e9ad81dc7ef1e1550e2e4263d958db6a0fba108457f34785b186ccb994c48809
+  sha256: f900ddf1a2845211152124795becb07f550fe2e32a2f6a43374c614070fe068f
   patches:
     - find_fortran.patch
 

@@ -7,7 +7,7 @@ Package license: MIT
 
 Feedstock license: BSD 3-Clause
 
-Summary: Routines to model ocean carbonate system thermodynamics.
+Summary: Routines to model ocean carbonate system thermodynamics
 
 
 
