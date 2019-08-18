@@ -11,7 +11,7 @@ source:
     - find_fortran.patch
 
 build:
-  number: 1000
+  number: 1001
   skip: True  # [win or osx or py2k]
 
 requirements:
