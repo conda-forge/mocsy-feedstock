@@ -11,7 +11,7 @@ source:
     - find_fortran.patch
 
 build:
-  number: 6
+  number: 7
   skip: True  # [win or osx or py2k]
 
 requirements:
@@ -19,13 +19,13 @@ requirements:
     - automake  # [not win]
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - numpy
     - make
   run:
     - python
-    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
